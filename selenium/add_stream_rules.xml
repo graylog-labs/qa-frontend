@@ -4,73 +4,54 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://172.16.20.4:9000/" />
-<title>create admin user</title>
+<title>add stream rules</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">create admin user</td></tr>
+<tr><td rowspan="1" colspan="3">add stream rules</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/search#fields=message%2Csource</td>
+	<td>/streams</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a.dropdown-toggle &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Users</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>id=create-user-btn</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=username</td>
-	<td>admin2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=fullname</td>
-	<td>John Doe</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=email</td>
-	<td>test@example.org</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=password</td>
-	<td>123456</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=password-repeat</td>
-	<td>123456</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=admin</td>
+	<td>xpath=(//button[@type='button'])[3]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=session-timeout-never</td>
+	<td>link=Quick add rule</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>//button[@type='submit']</td>
+	<td>sendKeys</td>
+	<td>css=input.form-control.tt-input</td>
+	<td>message</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.modal-header</td>
 	<td></td>
 </tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control</td>
+	<td>label=field presence</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=option[value=&quot;5&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+
 </tbody></table>
 </body>
 </html>

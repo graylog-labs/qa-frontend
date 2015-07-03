@@ -4,71 +4,61 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://172.16.20.4:9000/" />
-<title>create admin user</title>
+<title>Login</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">create admin user</td></tr>
+<tr><td rowspan="1" colspan="3">Login</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/search#fields=message%2Csource</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=a.dropdown-toggle &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Users</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>id=create-user-btn</td>
+	<td>/login?destination=%2Fstartpage</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=username</td>
-	<td>admin2</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=fullname</td>
-	<td>John Doe</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=email</td>
-	<td>test@example.org</td>
+	<td>admin</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=password</td>
-	<td>123456</td>
+	<td>admin</td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=password-repeat</td>
-	<td>123456</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=admin</td>
+	<td>clickAndWait</td>
+	<td>id=signin</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=session-timeout-never</td>
+	<td>//div[@id='navigation-bar']/nav/div/div[2]/ul[3]/li[2]/a/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//button[@type='submit']</td>
+	<td>link=Log out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=signin</td>
 	<td></td>
 </tr>
 </tbody></table>
