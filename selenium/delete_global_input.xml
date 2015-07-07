@@ -38,7 +38,7 @@
 </tr>
 <tr>
 	<td>assertConfirmation</td>
-	<td>Do you really want to terminate global input Test global, stopping it permanently on all active nodes in the cluster?</td>
+	<td>Really delete input Test global?</td>
 	<td></td>
 </tr>
 </tbody></table>
