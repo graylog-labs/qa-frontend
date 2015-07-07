@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://172.16.20.4:9000/" />
-<title>edit_stream</title>
+<title>edit_rules</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">edit_stream</td></tr>
+<tr><td rowspan="1" colspan="3">edit_rules</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -22,29 +22,39 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[3]</td>
+	<td>clickAndWait</td>
+	<td>link=Edit rules</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Edit stream</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=input.form-control</td>
+	<td>//div[@id='main-content']/div[2]/div/div/div[4]/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control</td>
-	<td>editbla</td>
+	<td>css=input.form-control.tt-input</td>
+	<td>user_id</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>css=input.form-control.tt-input</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=div.col-md-8 &gt; div.form-group &gt; select.form-control</td>
+	<td>label=greater than</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=option[value=&quot;3&quot;]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>//input[@value='blabla']</td>
-	<td>editbla</td>
+	<td>css=div.form-group &gt; input.form-control</td>
+	<td>500</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -52,8 +62,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyElementPresent</td>
-	<td>link=editblabla</td>
+	<td>clickAndWait</td>
+	<td>link=I'm done!</td>
 	<td></td>
 </tr>
 </tbody></table>
