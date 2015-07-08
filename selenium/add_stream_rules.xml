@@ -27,6 +27,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.tt-input</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>css=input.form-control.tt-input</td>
 	<td>message</td>

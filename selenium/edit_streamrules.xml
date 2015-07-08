@@ -13,7 +13,7 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/#fields=message%2Csource</td>
+	<td>/</td>
 	<td></td>
 </tr>
 <tr>
@@ -27,8 +27,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='main-content']/div[2]/div/div/div[4]/button</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>//div[@id='main-content']/div[2]/div/div/div[4]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[label=&quot;Field&quot;]</td>
 	<td></td>
 </tr>
 <tr>

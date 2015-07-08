@@ -13,7 +13,7 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/#fields=message%2Csource</td>
+	<td>/</td>
 	<td></td>
 </tr>
 <tr>
@@ -43,7 +43,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>//input[@value='blabla']</td>
+	<td>//input[@value='Description']</td>
 	<td>editbla</td>
 </tr>
 <tr>
@@ -52,8 +52,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>link=editblaTitle</td>
+	<td></td>
+</tr>
+<tr>
 	<td>verifyElementPresent</td>
-	<td>link=editblabla</td>
+	<td>link=editblaTitle</td>
 	<td></td>
 </tr>
 </tbody></table>
