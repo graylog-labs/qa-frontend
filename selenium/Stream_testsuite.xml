@@ -10,8 +10,10 @@
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="create_stream.xml">create_stream</a></td></tr>
 <tr><td><a href="add_stream_rules.xml">add_stream_rules</a></td></tr>
+<tr><td><a href="start_stream.xml">start_stream</a></td></tr>
 <tr><td><a href="edit_stream.xml">edit_stream</a></td></tr>
 <tr><td><a href="edit_streamrules.xml">edit_streamrules</a></td></tr>
+<tr><td><a href="pause_stream.xml">pause_stream</a></td></tr>
 </tbody></table>
 </body>
 </html>

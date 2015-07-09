@@ -13,7 +13,12 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/streams</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Streams</td>
 	<td></td>
 </tr>
 <tr>
