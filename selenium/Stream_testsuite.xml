@@ -14,6 +14,8 @@
 <tr><td><a href="edit_stream.xml">edit_stream</a></td></tr>
 <tr><td><a href="edit_streamrules.xml">edit_streamrules</a></td></tr>
 <tr><td><a href="pause_stream.xml">pause_stream</a></td></tr>
+<tr><td><a href="launch_new_output.xml">launch_new_output</a></td></tr>
+<tr><td><a href="globally_delete_output.xml">globally_delete_output</a></td></tr>
 </tbody></table>
 </body>
 </html>
