@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://172.16.20.4:9000/" />
-<title>edit_stream</title>
+<title>add stream rules</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">edit_stream</td></tr>
+<tr><td rowspan="1" colspan="3">add stream rules</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -22,48 +22,48 @@
 	<td></td>
 </tr>
 <tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick add rule</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[3]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[3]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Edit stream</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=input.form-control</td>
+	<td>css=input.form-control.tt-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control</td>
-	<td>editbla</td>
+	<td>css=input.form-control.tt-input</td>
+	<td>message</td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>//input[@value='Description']</td>
-	<td>editbla</td>
+	<td>fireEvent</td>
+	<td>css=input.form-control.tt-input</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.modal-header</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control</td>
+	<td>label=field presence</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=option[value=&quot;5&quot;]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=editblaTitle</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>link=editblaTitle</td>
 	<td></td>
 </tr>
 </tbody></table>

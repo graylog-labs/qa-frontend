@@ -9,13 +9,18 @@
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="create_stream.xml">create_stream</a></td></tr>
-<tr><td><a href="add_stream_rules.xml">add_stream_rules</a></td></tr>
+<tr><td><a href="start_stream.xml">start_stream</a></td></tr>
+<tr><td><a href="pause_stream.xml">pause_stream</a></td></tr>
 <tr><td><a href="start_stream.xml">start_stream</a></td></tr>
 <tr><td><a href="edit_stream.xml">edit_stream</a></td></tr>
+<tr><td><a href="quick_add_stream_rules.xml">quick_add_stream_rules</a></td></tr>
+<tr><td><a href="clone_this_stream.xml">clone_this_stream</a></td></tr>
 <tr><td><a href="edit_streamrules.xml">edit_streamrules</a></td></tr>
-<tr><td><a href="pause_stream.xml">pause_stream</a></td></tr>
 <tr><td><a href="launch_new_output.xml">launch_new_output</a></td></tr>
 <tr><td><a href="globally_delete_output.xml">globally_delete_output</a></td></tr>
+<tr><td><a href="add_message_countcondition.xml">add_message_countcondition</a></td></tr>
+<tr><td><a href="add_field_valuecondition.xml">add_field_valuecondition</a></td></tr>
+<tr><td><a href="add_field_contentcondition.xml">add_field_contentcondition</a></td></tr>
 </tbody></table>
 </body>
 </html>
