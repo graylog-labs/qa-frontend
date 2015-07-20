@@ -59,7 +59,7 @@
 <tr>
 	<td>type</td>
 	<td>name=value</td>
-	<td>400</td>
+	<td>500</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -81,7 +81,6 @@
 	<td>css=h3</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

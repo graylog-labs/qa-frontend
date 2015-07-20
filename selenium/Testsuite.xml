@@ -10,13 +10,13 @@
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="login_logout.xml">login_logout</a></td></tr>
 <tr><td><a href="create_input.xml">create_input</a></td></tr>
-<tr><td><a href="create_stream.xml">create_stream</a></td></tr>
-<tr><td><a href="create_dashboard.xml">create_dashboard</a></td></tr>
 <tr><td><a href="delete_input.xml">delete_input</a></td></tr>
+<tr><td><a href="create_dashboard.xml">create_dashboard</a></td></tr>
 <tr><td><a href="create_global_input.xml">create_global_input</a></td></tr>
 <tr><td><a href="create_admin_user.xml">create_admin_user</a></td></tr>
 <tr><td><a href="delete_global_input.xml">delete_global_input</a></td></tr>
 <tr><td><a href="create_read_only_user.xml">create_read_only_user</a></td></tr>
+<tr><td><a href="create_input.xml">create_input</a></td></tr>
 </tbody></table>
 </body>
 </html>

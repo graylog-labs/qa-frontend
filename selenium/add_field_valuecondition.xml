@@ -13,7 +13,7 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/search#fields=message%2Csource</td>
+	<td>/</td>
 	<td></td>
 </tr>
 <tr>
@@ -54,11 +54,16 @@
 <tr>
 	<td>select</td>
 	<td>name=type</td>
-	<td>label=maximum value</td>
+	<td>label=sum</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=option[value=&quot;max&quot;]</td>
+	<td>css=option[value=&quot;sum&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='threshold_type'])[4]</td>
 	<td></td>
 </tr>
 <tr>

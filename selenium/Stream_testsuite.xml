@@ -15,6 +15,7 @@
 <tr><td><a href="edit_stream.xml">edit_stream</a></td></tr>
 <tr><td><a href="quick_add_stream_rules.xml">quick_add_stream_rules</a></td></tr>
 <tr><td><a href="clone_this_stream.xml">clone_this_stream</a></td></tr>
+<tr><td><a href="delete_stream.xml">delete_stream</a></td></tr>
 <tr><td><a href="edit_streamrules.xml">edit_streamrules</a></td></tr>
 <tr><td><a href="launch_new_output.xml">launch_new_output</a></td></tr>
 <tr><td><a href="globally_delete_output.xml">globally_delete_output</a></td></tr>
