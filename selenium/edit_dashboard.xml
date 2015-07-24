@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://172.16.20.4:9000/" />
+<link rel="selenium.base" href="http://172.16.20.14:9000/" />
 <title>edit_dashboard</title>
 </head>
 <body>
@@ -28,12 +28,12 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=55ae48cbe4b08f70e8c405dd-title</td>
+	<td>css=input.form-control	</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=55ae2ee3e4b08f70e8c3e962-title</td>
+	<td>css=input.form-control	</td>
 	<td>_edited</td>
 </tr>
 <tr>
@@ -61,7 +61,6 @@
 	<td>css=span.dashboard-description</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

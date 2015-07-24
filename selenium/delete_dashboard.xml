@@ -3,64 +3,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://172.16.20.14:9000/" />
-<title>add_message_countcondition</title>
+<link rel="selenium.base" href="http://172.16.20.4:9000/" />
+<title>delete_dashboard</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">add_message_countcondition</td></tr>
+<tr><td rowspan="1" colspan="3">delete_dashboard</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/</td>
+	<td>/search#fields=message%2Csource</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Streams</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Manage alerts</td>
+	<td>link=Dashboards</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='main-content']/div[2]/div/form/div/button</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>name=threshold</td>
-	<td>10</td>
+	<td>click</td>
+	<td>link=Delete this dashboard</td>
+	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>name=time</td>
-	<td>10</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=grace</td>
-	<td>5</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=backlog</td>
-	<td>10</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=p &gt; button.btn.btn-success</td>
+	<td>assertConfirmation</td>
+	<td>Do you really want to delete the dashboard _editedfoo?</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
-	<td>css=h3</td>
+	<td>css=div.alert.alert-warning</td>
 	<td></td>
 </tr>
+
 </tbody></table>
 </body>
 </html>
