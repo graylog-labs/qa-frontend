@@ -9,8 +9,10 @@
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="create_dashboard.xml">create_dashboard</a></td></tr>
-<tr><td><a href="add_histogram_to_dashboard.xml">add_histogram_to_dashboard</a></td></tr>
 <tr><td><a href="add_searchresult_to_dashboard.xml">add_searchresult_to_dashboard</a></td></tr>
+<tr><td><a href="add_streamsearchresult_to_dashboard">add_streamsearchresult_to_dashboard</a></td></tr>
+<tr><td><a href="add_fieldstatistic_to_dashboard">add_fieldstatistic_to_dashboard</a></td></tr>
+<tr><td><a href="add_histogram_to_dashboard.xml">add_histogram_to_dashboard</a></td></tr>
 <tr><td><a href="add_fieldgraph_to_dashboard.xml">add_fieldgraph_to_dashboard</a></td></tr>
 <tr><td><a href="add_quickvalues_to_dashboard.xml">add_quickvalues_to_dashboard</a></td></tr>
 <tr><td><a href="edit_dashboard.xml">edit_dashboard</a></td></tr>
