@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://172.16.20.6:9000/" />
-<title>Login</title>
+<title>lock_unlock_dashboard</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">Login</td></tr>
+<tr><td rowspan="1" colspan="3">lock_unlock_dashboard</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -17,50 +17,36 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=username</td>
-	<td>admin</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=password</td>
-	<td>admin</td>
+	<td>clickAndWait</td>
+	<td>link=Dashboards</td>
+	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>id=signin</td>
+	<td>css=span.dashboard-title</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='navigation-bar']/nav/div/div[2]/ul[3]/li[2]/a/span</td>
+	<td>id=toggle-dashboard-lock</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Log out</td>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='main-content']/div/div/h1/span[2]/span/button</td>
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>null</td>
+	<td>click</td>
+	<td>id=toggle-dashboard-lock</td>
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=username</td>
-	<td>admin</td>
+	<td>waitForText</td>
+	<td>id=toggle-dashboard-lock</td>
+	<td>Unlock / Edit</td>
 </tr>
-<tr>
-	<td>type</td>
-	<td>id=password</td>
-	<td>admin</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>id=signin</td>
-	<td></td>
-</tr>
+
 </tbody></table>
 </body>
 </html>
