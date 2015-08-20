@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://172.16.20.6:9000/" />
+<link rel="selenium.base" href="http://172.16.20.11:9000/" />
 <title>create_dashboard</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='main-content']/div/div[2]/div/span/button</td>
+	<td>//div[@id='react-dashboard-list-page']/div/div/div[2]/div/span/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -37,13 +37,8 @@
 	<td>bar</td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>css=span.dashboard-title</td>
 	<td></td>
 </tr>
 </tbody></table>

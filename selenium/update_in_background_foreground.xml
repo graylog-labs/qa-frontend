@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://172.16.20.6:9000/" />
+<link rel="selenium.base" href="http://172.16.20.11:9000/" />
 <title>update_in_background_foreground</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=span.dashboard-title</td>
+	<td>css=h2 &gt; a &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -56,7 +56,6 @@
 	<td>id=update-unfocussed</td>
 	<td>Update in background</td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
