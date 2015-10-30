@@ -1,5 +1,6 @@
 require "test/unit"
-require "selenium/client"
+require "json"
+require "selenium-webdriver"
 require "base64"
 
 class Test::Unit::TestCase
@@ -8,19 +9,15 @@ class Test::Unit::TestCase
       raise "Define target system by setting 'SUT' environment variable"
       exit 1
     end
+    @driver = Selenium::WebDriver.for(:remote, :url => "http://#{ENV['SUT']}:4444/wd/hub")
+    @base_url = "http://#{ENV['SUT']}:9000"
+    @accept_next_alert = true
+    @driver.manage.timeouts.implicit_wait = 30
     @verification_errors = []
-    @selenium = Selenium::Client::Driver.new \
-      :host => ENV['SUT'],
-      :port => 4444,
-      :browser => "firefox",
-      :url => "http://127.0.0.1:9000/",
-      :timeout_in_second => 60
-
-    @selenium.start_new_browser_session
   end
 
   def teardown
-    @selenium.close_current_browser_session
+    @driver.quit
     assert_equal [], @verification_errors
   end
 
@@ -32,16 +29,49 @@ class Test::Unit::TestCase
   end
 
   def login
-    @selenium.open "/"
-    @selenium.type "id=username", "admin"
-    @selenium.type "id=password", "admin"
-    @selenium.click "id=signin"
-    @selenium.wait_for_page_to_load "30000"
+    @driver.get(@base_url + "/")
+    @driver.find_element(:id, "username").clear
+    @driver.find_element(:id, "username").send_keys "admin"
+    @driver.find_element(:id, "password").clear
+    @driver.find_element(:id, "password").send_keys "admin"
+    @driver.find_element(:id, "signin").click
   end
 
   def logout
-    @selenium.open "/logout"
-    @selenium.wait_for_page_to_load "30000"
+    @driver.get(@base_url + "/logout")
+  end
+  
+  def element_present?(how, what)
+    @driver.find_element(how, what)
+    true
+  rescue Selenium::WebDriver::Error::NoSuchElementError
+    false
+  end
+  
+  def alert_present?()
+    @driver.switch_to.alert
+    true
+  rescue Selenium::WebDriver::Error::NoAlertPresentError
+    false
+  end
+  
+  def verify(&blk)
+    yield
+  rescue Test::Unit::AssertionFailedError => ex
+    @verification_errors << ex
+  end
+  
+  def close_alert_and_get_its_text(how, what)
+    alert = @driver.switch_to().alert()
+    alert_text = alert.text
+    if (@accept_next_alert) then
+      alert.accept()
+    else
+      alert.dismiss()
+    end
+    alert_text
+  ensure
+    @accept_next_alert = true
   end
 end
 
