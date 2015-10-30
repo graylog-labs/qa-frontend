@@ -22,10 +22,7 @@ class Test::Unit::TestCase
   end
 
   def screenshot(filename='/tmp/screenshot.png')
-    screenshot = @selenium.capture_entire_page_screenshot_to_string("")
-    File.open(filename, 'wb') do|f|
-      f.write(Base64.decode64(screenshot))
-    end
+    screenshot = @driver.save_screenshot(filename)
   end
 
   def login
