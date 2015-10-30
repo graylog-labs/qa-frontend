@@ -58,11 +58,6 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=admin</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
 	<td>id=session-timeout-never</td>
 	<td></td>
 </tr>
