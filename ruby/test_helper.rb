@@ -70,5 +70,9 @@ class Test::Unit::TestCase
   ensure
     @accept_next_alert = true
   end
+
+  def wait_for(type, id)
+    60.times{ break if (element_present?(type, id) rescue false); sleep 1 }
+  end
 end
 
