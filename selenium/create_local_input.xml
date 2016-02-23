@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://172.16.20.14:9000/" />
+<title>create_local_input</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">create_local_input</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Inputs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.Select-placeholder</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.Select-input input</td>
+	<td>Random HTTP message generator${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-success</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=title</td>
+	<td>Test HTTP Input</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control</td>
+	<td>index=1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.btn.btn-primary:contains(&quot;Save&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=.label.label-success:contains(&quot;RUNNING&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=.label.label-success:contains(&quot;RUNNING&quot;)</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
