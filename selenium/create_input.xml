@@ -3,59 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://172.16.20.11:9000/" />
-<title>create input</title>
+<link rel="selenium.base" href="http://172.16.20.13:9000/" />
+<title>create_input</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">create input</td></tr>
+<tr><td rowspan="1" colspan="3">create_input</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/</td>
+	<td>/search</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=System</td>
+	<td>css=span</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>link=Inputs</td>
 	<td></td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>id=input-type</td>
-	<td>label=Random HTTP message generator</td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>css=option[value=&quot;org.graylog2.inputs.random.FakeHttpMessageInput&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=configure-input</td>
+	<td>css=button.btn.btn-success</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=title-org.graylog2.inputs.random.FakeHttpMessageInput</td>
-	<td>test</td>
+	<td>id=title</td>
+	<td>Test HTTP Input</td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>xpath=(//button[@data-type=&quot;org.graylog2.inputs.random.FakeHttpMessageInput&quot;])</td>
+	<td>select</td>
+	<td>css=select.form-control</td>
+	<td>label=d38c2861 / client</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='main-content']/div/div/div[3]/div/ul/li/div/div/h2/small/span/span[3]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
-	<td>css=h3.graylog-input-title</td>
+	<td>//div[@id='main-content']/div/div/div[3]/div/ul/li/div/div/h2/small/span/span[3]</td>
 	<td></td>
 </tr>
+
 </tbody></table>
 </body>
 </html>

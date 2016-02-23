@@ -3,43 +3,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://172.16.20.11:9000/" />
-<title>create read only unser</title>
+<link rel="selenium.base" href="http://172.16.20.13:9000/" />
+<title>create_reader_user</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">create read only unser</td></tr>
+<tr><td rowspan="1" colspan="3">create_reader_user</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/#fields=message%2Csource</td>
+	<td>/search</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=System</td>
+	<td>css=span</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>link=Users</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>id=create-user-btn</td>
+	<td>click</td>
+	<td>link=Add new user</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=username</td>
-	<td>reader</td>
+	<td>Readonlyuser</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=fullname</td>
-	<td>John Reader</td>
+	<td>John Doe</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -62,7 +62,12 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
+	<td>//form[@id='create-user-form']/span/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
 	<td>//button[@type='submit']</td>
 	<td></td>
 </tr>
