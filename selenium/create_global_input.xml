@@ -27,14 +27,29 @@
 	<td></td>
 </tr>
 <tr>
-	<td>open</td>
-	<td>/ </td>
+	<td>click</td>
+	<td>css=div.Select-placeholder</td>
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
+	<td>css=div.Select-input input</td>
+	<td>Random HTTP message generator${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-success</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
 	<td>id=title</td>
-	<td>Test global Input</td>
+	<td>Test HTTP global Input</td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -43,7 +58,17 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>css=.btn.btn-primary:contains(&quot;Save&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=.label.label-success:contains(&quot;RUNNING&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=.label.label-success:contains(&quot;RUNNING&quot;)</td>
 	<td></td>
 </tr>
 </tbody></table>

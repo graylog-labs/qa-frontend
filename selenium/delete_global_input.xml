@@ -41,11 +41,6 @@
 	<td>link=Delete input</td>
 	<td></td>
 </tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>//div[@id='main-content']/div/div/div[3]/div/div/span[2]</td>
-	<td></td>
-</tr>
 </tbody></table>
 </body>
 </html>
