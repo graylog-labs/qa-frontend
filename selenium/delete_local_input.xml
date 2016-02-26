@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://172.16.20.13:9000/" />
+<link rel="selenium.base" href="http://172.16.20.14:9000/" />
 <title>delete_local_input</title>
 </head>
 <body>
@@ -23,27 +23,17 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Inputs</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=more-actions-dropdown-56c33c25e4b0cf89d443c7e3</td>
+	<td>id=system-menu-dropdown</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.item-actions button.dropdown-toggle</td>
+	<td>link=Inputs</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>link=Delete input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>//div[@id='main-content']/div/div/div[3]/div/div/span[2]</td>
 	<td></td>
 </tr>
 </tbody></table>
