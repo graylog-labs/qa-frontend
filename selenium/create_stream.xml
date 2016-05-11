@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://172.16.20.18:9000/" />
+<title>create_stream</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">create_stream</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Streams</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Streams</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{Math.random().toString(36).substring(2,12)}</td>
+	<td>streamName</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>link=${streamName}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@label='Title']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//input[@label='Title']</td>
+	<td>${streamName}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//input[@label='Description']</td>
+	<td>Testing</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary:contains(&quot;Save&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=${streamName}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=${streamName}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]/descendant::node()[text()=&quot;stopped&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]/descendant::node()[@class=&quot;stream-description&quot;]/descendant::node()[text()=&quot;Testing&quot;]</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

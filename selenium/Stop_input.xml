@@ -4,38 +4,14 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://172.16.20.18:9000/" />
-<title>delete_global_input</title>
+<title>Stop_input</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">delete_global_input</td></tr>
+<tr><td rowspan="1" colspan="3">Stop_input</td></tr>
 </thead><tbody>
-<tr>
-	<td>open</td>
-	<td>/ </td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=system-menu-dropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Inputs</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Delete input</td>
-	<td></td>
-</tr>
+
 </tbody></table>
 </body>
 </html>
