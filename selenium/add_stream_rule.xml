@@ -61,6 +61,11 @@
 	<td>//button[.=&quot;Save&quot;]</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//ul[@class=&quot;streamrules-list&quot;]/li[descendant::node()[text()=&quot;foo&quot;]]</td>
+	<td></td>
+</tr>
 
 </tbody></table>
 </body>
