@@ -32,11 +32,15 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForConfirmation</td>
+	<td>Do you really want to remove this stream?</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementNotPresent</td>
 	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
