@@ -36,6 +36,11 @@
 	<td>link=Delete input</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForConfirmation</td>
+	<td>Do you really want to delete input 'Test HTTP global Input'?</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
