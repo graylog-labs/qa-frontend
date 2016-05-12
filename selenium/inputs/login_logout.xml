@@ -17,28 +17,33 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id=&quot;login-box&quot;]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>css=input.form-control</td>
+	<td>//input[@placeholder=&quot;Username&quot;]</td>
 	<td>admin</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//input[@type='password']</td>
+	<td>//input[@placeholder='Password']</td>
 	<td>admin</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=input.btn.btn-info</td>
+	<td>//input[@value=&quot;Sign in&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='user-menu-dropdown']/span)[3]</td>
+	<td>//a[@id='user-menu-dropdown']/descendant::node()[.=&quot;Administrator&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='user-menu-dropdown']/span)[3]</td>
+	<td>//a[@id='user-menu-dropdown']/descendant::node()[.=&quot;Administrator&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -47,18 +52,23 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id=&quot;login-box&quot;]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>css=input.form-control</td>
+	<td>//input[@placeholder=&quot;Username&quot;]</td>
 	<td>admin</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//input[@type='password']</td>
+	<td>//input[@placeholder='Password']</td>
 	<td>admin</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=input.btn.btn-info</td>
+	<td>//input[@value=&quot;Sign in&quot;]</td>
 	<td></td>
 </tr>
 </tbody></table>
