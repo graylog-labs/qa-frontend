@@ -18,12 +18,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]/descendant::node()[text()=&quot;More actions&quot;]</td>
+	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]/descendant::node()[text()=&quot;More Actions&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]/descendant::node()[text()=&quot;More actions&quot;]</td>
+	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]/descendant::node()[text()=&quot;More Actions&quot;]</td>
 	<td></td>
 </tr>
 <tr>

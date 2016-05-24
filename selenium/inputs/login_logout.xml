@@ -18,7 +18,11 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+<<<<<<< c6d32c75b454b1e0b843179e5976ad25f8ca4dda
 	<td>//div[@id=&quot;login-box&quot;]</td>
+=======
+	<td>css=input.form-control</td>
+>>>>>>> corrected streams test
 	<td></td>
 </tr>
 <tr>
@@ -53,7 +57,11 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+<<<<<<< c6d32c75b454b1e0b843179e5976ad25f8ca4dda
 	<td>//div[@id=&quot;login-box&quot;]</td>
+=======
+	<td>css=input.form-control</td>
+>>>>>>> corrected streams test
 	<td></td>
 </tr>
 <tr>

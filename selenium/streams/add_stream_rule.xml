@@ -13,7 +13,7 @@
 </thead><tbody>
 <tr>
 	<td>click</td>
-	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]/descendant::node()[text()=&quot;Edit rules&quot;]</td>
+	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]/descendant::node()[text()=&quot;Manage Rules&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -66,7 +66,6 @@
 	<td>//ul[@class=&quot;streamrules-list&quot;]/li[descendant::node()[text()=&quot;foo&quot;]]</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
