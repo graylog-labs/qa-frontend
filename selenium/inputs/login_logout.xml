@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://172.16.20.18:9000/" />
+<link rel="selenium.base" href="http://172.16.20.6:9000/" />
 <title>login_logout</title>
 </head>
 <body>
@@ -18,11 +18,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-<<<<<<< c6d32c75b454b1e0b843179e5976ad25f8ca4dda
-	<td>//div[@id=&quot;login-box&quot;]</td>
-=======
-	<td>css=input.form-control</td>
->>>>>>> corrected streams test
+	<td>//input[@placeholder=&quot;Username&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -57,11 +53,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-<<<<<<< c6d32c75b454b1e0b843179e5976ad25f8ca4dda
-	<td>//div[@id=&quot;login-box&quot;]</td>
-=======
-	<td>css=input.form-control</td>
->>>>>>> corrected streams test
+	<td>//input[@placeholder=&quot;Username&quot;]</td>
 	<td></td>
 </tr>
 <tr>

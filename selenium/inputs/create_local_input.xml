@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://172.16.20.18:9000/" />
+<link rel="selenium.base" href="http://172.16.20.6:9000/" />
 <title>create_local_input</title>
 </head>
 <body>
@@ -14,6 +14,11 @@
 <tr>
 	<td>open</td>
 	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span</td>
 	<td></td>
 </tr>
 <tr>
@@ -29,6 +34,11 @@
 <tr>
 	<td>click</td>
 	<td>link=Inputs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.Select-placeholder</td>
 	<td></td>
 </tr>
 <tr>

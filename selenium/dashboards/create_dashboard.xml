@@ -4,16 +4,21 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://172.16.20.6:9000/" />
-<title>Add_static_field</title>
+<title>New Test</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">Add_static_field</td></tr>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/search</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Dashboards</td>
 	<td></td>
 </tr>
 <tr>
@@ -22,36 +27,50 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='main-content']/div/div/div/div/div/div/span/button</td>
+	<td>store</td>
+	<td>javascript{Math.random().toString(36).substring(2,12)}</td>
+	<td>dashboardName</td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>link=${dashboardName}</td>
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=undefined-title</td>
-	<td>Testdashboard</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>xpath=(//input[@type='text'])[2]</td>
-	<td>Testing</td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>//button[.=&quot;Create dashboard&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=h2 &gt; a &gt; span</td>
+	<td>//input[@label='Title:']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//input[@label='Title:']</td>
+	<td>${dashboardName}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//input[@label='Description:']</td>
+	<td>Testing</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[.=&quot;Save&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=${dashboardName}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
-	<td>css=h2 &gt; a &gt; span</td>
+	<td>link=${dashboardName}</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

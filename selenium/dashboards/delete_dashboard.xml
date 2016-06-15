@@ -4,41 +4,46 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://172.16.20.6:9000/" />
-<title>delete_stream</title>
+<title>delete_dashboard</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">delete_stream</td></tr>
+<tr><td rowspan="1" colspan="3">delete_dashboard</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/streams</td>
+	<td>/dashboards</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]/descendant::node()[text()=&quot;More Actions&quot;]</td>
+	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${dashboardName}&quot;]]/descendant::node()[text()=&quot;More actions&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]/descendant::node()[text()=&quot;More Actions&quot;]</td>
+	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${dashboardName}&quot;]]/descendant::node()[text()=&quot;More actions&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]/descendant::node()[text()=&quot;Delete this stream&quot;]</td>
+	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${dashboardName}&quot;]]/descendant::node()[text()=&quot;Delete this dashboard&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForConfirmation</td>
-	<td>Do you really want to remove this stream?</td>
+	<td>Do you really want to delete the dashboard ${dashboardName}?</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>//li[@class=&quot;stream&quot; and descendant::node()[text()=&quot;${streamName}&quot;]]</td>
+	<td>link=${dashboardName}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>link=${dashboardName}</td>
 	<td></td>
 </tr>
 </tbody></table>
