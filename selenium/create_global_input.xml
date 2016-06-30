@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://172.16.20.6:9000/" />
-<title>create_local_input</title>
+<title>create_global_input</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">create_local_input</td></tr>
+<tr><td rowspan="1" colspan="3">create_global_input</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -78,6 +78,11 @@
 </tr>
 <tr>
 	<td>click</td>
+	<td>css=input[type=&quot;checkbox&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
 	<td>css=.btn.btn-primary:contains(&quot;Save&quot;)</td>
 	<td></td>
 </tr>
@@ -91,6 +96,7 @@
 	<td>css=.label.label-success:contains(&quot;RUNNING&quot;)</td>
 	<td></td>
 </tr>
+
 </tbody></table>
 </body>
 </html>

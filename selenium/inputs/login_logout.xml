@@ -71,6 +71,11 @@
 	<td>//input[@value=&quot;Sign in&quot;]</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=img</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
