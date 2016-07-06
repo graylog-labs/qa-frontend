@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.graylog</groupId>
+    <artifactId>qa-frontend-tests</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <sauceUser>${env.SAUCE_USERNAME}</sauceUser>
+        <sauceKey>${env.SAUCE_ACCESS_KEY}</sauceKey>
+        <baseUrl>${env.BASEURL}</baseUrl>
+        <tunnelIdentifier>${env.TRAVIS_JOB_NUMBER}</tunnelIdentifier>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.graylog</groupId>
+            <artifactId>selenese-runner-java</artifactId>
+            <version>2.8.1-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+            <version>2.7.8</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <executions>
+                    <execution>
+                        <id>Execution Tests Selenium</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>java</executable>
+                            <classpathScope>test</classpathScope>
+                            <longClasspath>true</longClasspath>
+                            <successCodes>
+                                <successCode>0</successCode>
+                                <successCode>3</successCode>
+                            </successCodes>
+                            <arguments>
+                                <argument>-classpath</argument>
+                                <classpath />
+                                <argument>jp.vmi.selenium.selenese.Main</argument>
+                                <argument>--driver</argument>
+                                <argument>remote</argument>
+                                <argument>--remote-url</argument>
+                                <argument>http://${sauceUser}:${sauceKey}@ondemand.saucelabs.com:80/wd/hub</argument>
+                                <argument>--remote-platform</argument>
+                                <argument>Linux</argument>
+                                <argument>--remote-browser</argument>
+                                <argument>Firefox</argument>
+                                <argument>--remote-tunnel-identifier</argument>
+                                <argument>${tunnelIdentifier}</argument>
+                                <argument>--html-result</argument>
+                                <argument>target/site/selenium-reports</argument>
+                                <argument>--xml-result</argument>
+                                <argument>target/failsafe-reports</argument>
+                                <argument>--baseurl</argument>
+                                <argument>${baseUrl}</argument>
+                                <argument>selenium/streams/Streams_Testsuite.html</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
