@@ -51,15 +51,13 @@
                                     <goal>exec</goal>
                                 </goals>
                                 <configuration>
-                                    <executable>bash</executable>
+                                    <executable>java</executable>
                                     <classpathScope>test</classpathScope>
                                     <longClasspath>true</longClasspath>
                                     <successCodes>
                                         <successCode>0</successCode>
                                     </successCodes>
                                     <arguments>
-                                        <arguments>-c</arguments>
-                                        <arguments>java</arguments>
                                         <argument>-classpath</argument>
                                         <classpath />
                                         <argument>jp.vmi.selenium.selenese.Main</argument>
@@ -79,7 +77,9 @@
                                         <argument>target/failsafe-reports</argument>
                                         <argument>--baseurl</argument>
                                         <argument>${baseUrl}</argument>
-                                        <argument>selenium/**/*_Testsuite.html</argument>
+                                        <argument>selenium/dashboards/Dashboards_Testsuite.html</argument>
+                                        <argument>selenium/inputs/Inputs_Testsuite.html</argument>
+                                        <argument>selenium/streams/Streams_Testsuite.html</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
