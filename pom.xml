@@ -51,13 +51,15 @@
                                     <goal>exec</goal>
                                 </goals>
                                 <configuration>
-                                    <executable>java</executable>
+                                    <executable>bash</executable>
                                     <classpathScope>test</classpathScope>
                                     <longClasspath>true</longClasspath>
                                     <successCodes>
                                         <successCode>0</successCode>
                                     </successCodes>
                                     <arguments>
+                                        <arguments>-c</arguments>
+                                        <arguments>java</arguments>
                                         <argument>-classpath</argument>
                                         <classpath />
                                         <argument>jp.vmi.selenium.selenese.Main</argument>
