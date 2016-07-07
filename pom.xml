@@ -56,7 +56,6 @@
                                     <longClasspath>true</longClasspath>
                                     <successCodes>
                                         <successCode>0</successCode>
-                                        <successCode>3</successCode>
                                     </successCodes>
                                     <arguments>
                                         <argument>-classpath</argument>
@@ -78,7 +77,7 @@
                                         <argument>target/failsafe-reports</argument>
                                         <argument>--baseurl</argument>
                                         <argument>${baseUrl}</argument>
-                                        <argument>selenium/streams/Streams_Testsuite.html</argument>
+                                        <argument>selenium/**/*_Testsuite.html</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
