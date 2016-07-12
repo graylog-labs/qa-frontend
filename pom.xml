@@ -62,15 +62,15 @@
                                         <classpath />
                                         <argument>jp.vmi.selenium.selenese.Main</argument>
                                         <argument>--driver</argument>
-                                        <argument>remote</argument>
+                                        <argument>saucelabs</argument>
                                         <argument>--sauce-labs-user</argument>
                                         <argument>${sauceUser}</argument>
                                         <argument>--sauce-labs-key</argument>
                                         <argument>${sauceKey}</argument>
                                         <argument>--remote-platform</argument>
-                                        <argument>Linux</argument>
+                                        <argument>${env.PLATFORM}}</argument>
                                         <argument>--remote-browser</argument>
-                                        <argument>Firefox</argument>
+                                        <argument>${env.BROWSER}}</argument>
                                         <argument>--sauce-labs-tunnel-identifier</argument>
                                         <argument>${tunnelIdentifier}</argument>
                                         <argument>--sauce-labs-run-name</argument>

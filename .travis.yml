@@ -19,3 +19,8 @@ env:
     - SAUCE_USERNAME=graylog
     - BASEURL=http://localhost:9000
     - secure: hTuMZwJkd0fKoiEAsY4uvmHhsWKrzkBCDSNiwvOndpr500HrzgUfsJ+D5mU7eVfFomlBdEubB8Ubkn5n/ozSW0BukcuEb6O7l8AN3ixjubjC8zQBijpVrVHpYPA8aMkD12K+jhOTnzbVROq3PcFjwSgLkBF8ENN+JZvTTSyvEfwGYEEcZozPdware6lyJx7fk9jpk8JecAnYNgSt3cbWcoESxLnoO69ZDtEFut5QTM0+pqxjGHzoo83C2vUe8MtSwzisGQsA9ktq4yffYeJYNM00fOq7By8bB79E24MeUUjA9ZPREzoI6ZXX3wlqXZbU0qi8c0W2MdGIbDdkRIteZRkCk0x9aEacRJKJMtYx4/H+B/T3QSb0Vh5gzmHbL3SCK6KPj77gcfRMeh8iOv32ZDe6SFVwL5jh8Wg+78zwXA3jaRsu2pKLQ7gXT3/SCNiizaLxXIIcYixHmt74MTHI3+SPP4L273z/tHQhKoTmjhla89Njie7oQ/xOBNfTPC7dGCyaBk2FT7qJZidK1CjEnWJzPI/RmzQ3y/s5Y2ekuvvm8Z2zqzwe2e+9FvIgEXvfNF7hatYTt5IbjEy0hBwVi2m11KW9xPhW6NHK1P9KApHRA0fH0y4CHcGj1R/U2+K/ddmrAuojMJ+oKUITmiuUx25ah3URhA6YmO6hZfFYffk=
+  matrix:
+    - PLATFORM="Windows 10" BROWSER="internet explorer"
+    - PLATFORM="Linux"      BROWSER="chrome"
+    - PLATFORM="Linux"      BROWSER="firefox"
+    - PLATFORM="OS X 10.11" BROWSER="safari"
