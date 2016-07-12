@@ -63,14 +63,18 @@
                                         <argument>jp.vmi.selenium.selenese.Main</argument>
                                         <argument>--driver</argument>
                                         <argument>remote</argument>
-                                        <argument>--remote-url</argument>
-                                        <argument>http://${sauceUser}:${sauceKey}@ondemand.saucelabs.com:80/wd/hub</argument>
+                                        <argument>--sauce-labs-user</argument>
+                                        <argument>${sauceUser}</argument>
+                                        <argument>--sauce-labs-key</argument>
+                                        <argument>${sauceKey}</argument>
                                         <argument>--remote-platform</argument>
                                         <argument>Linux</argument>
                                         <argument>--remote-browser</argument>
                                         <argument>Firefox</argument>
-                                        <argument>--remote-tunnel-identifier</argument>
+                                        <argument>--sauce-labs-tunnel-identifier</argument>
                                         <argument>${tunnelIdentifier}</argument>
+                                        <argument>--sauce-labs-run-name</argument>
+                                        <argument>QA-Frontend</argument>
                                         <argument>--html-result</argument>
                                         <argument>target/site/selenium-reports</argument>
                                         <argument>--xml-result</argument>
