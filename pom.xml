@@ -68,9 +68,9 @@
                                         <argument>--sauce-labs-key</argument>
                                         <argument>${sauceKey}</argument>
                                         <argument>--remote-platform</argument>
-                                        <argument>${env.PLATFORM}}</argument>
+                                        <argument>${env.PLATFORM}</argument>
                                         <argument>--remote-browser</argument>
-                                        <argument>${env.BROWSER}}</argument>
+                                        <argument>${env.BROWSER}</argument>
                                         <argument>--remote-version</argument>
                                         <argument>${env.VERSION}</argument>
                                         <argument>--sauce-labs-tunnel-identifier</argument>
