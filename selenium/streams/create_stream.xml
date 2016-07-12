@@ -63,7 +63,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary:contains(&quot;Save&quot;)</td>
+    <td>//button[.='Save']</td>
 	<td></td>
 </tr>
 <tr>

@@ -2,18 +2,11 @@
 <configuration>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
-            <evaluator>
-                <matcher>
-                    <Name>credentials</Name>
-                    <!-- filter out odd numbered statements -->
-                    <regex>Remote URL</regex>
-                </matcher>
-                <expression>credentials.matches(formattedMessage)</expression>
-            </evaluator>
-            <OnMismatch>NEUTRAL</OnMismatch>
+        <turboFilter class="ch.qos.logback.classic.turbo.MarkerFilter">
+            <Name>CONFIDENTIAL_FILTER</Name>
+            <Marker>CONFIDENTIAL</Marker>
             <OnMatch>DENY</OnMatch>
-        </filter>
+        </turboFilter>
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
         </layout>
