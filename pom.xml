@@ -71,6 +71,8 @@
                                         <argument>${env.PLATFORM}}</argument>
                                         <argument>--remote-browser</argument>
                                         <argument>${env.BROWSER}}</argument>
+                                        <argument>--remote-version</argument>
+                                        <argument>${env.VERSION}</argument>
                                         <argument>--sauce-labs-tunnel-identifier</argument>
                                         <argument>${tunnelIdentifier}</argument>
                                         <argument>--sauce-labs-run-name</argument>
