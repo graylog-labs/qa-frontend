@@ -77,6 +77,10 @@
                                         <argument>${tunnelIdentifier}</argument>
                                         <argument>--sauce-labs-run-name</argument>
                                         <argument>QA-Frontend</argument>
+                                        <argument>--sauce-labs-build-name</argument>
+                                        <argument>build-${env.TRAVIS_BUILD_NUMBER}</argument>
+                                        <argument>--sauce-labs-custom-data</argument>
+                                        <argument>branch=${env.TRAVIS_BRANCH}</argument>
                                         <argument>--html-result</argument>
                                         <argument>target/site/selenium-reports</argument>
                                         <argument>--xml-result</argument>
