@@ -4,28 +4,15 @@
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <withJansi>true</withJansi>
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36}) - %msg%n</pattern>
+            <pattern>%cyan([%d{HH:mm:ss.SSS}]) %highlight(%-5level) %msg%n</pattern>
         </encoder>
-        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
-            <evaluator>
-                <matcher>
-                    <Name>credentials</Name>
-                    <!-- filter out odd numbered statements -->
-                    <regex>Remote URL</regex>
-                </matcher>
-                <expression>credentials.matches(formattedMessage)</expression>
-            </evaluator>
-            <OnMismatch>NEUTRAL</OnMismatch>
-        </filter>
-        <turboFilter class="ch.qos.logback.classic.turbo.MarkerFilter">
-            <Name>CONFIDENTIAL_FILTER</Name>
-            <Marker>CONFIDENTIAL</Marker>
-            <OnMatch>DENY</OnMatch>
-        </turboFilter>
     </appender>
 
-    <logger name="com.base22" level="TRACE"/>
-
+    <turboFilter class="ch.qos.logback.classic.turbo.MarkerFilter">
+        <Name>CONFIDENTIAL_FILTER</Name>
+        <Marker>CONFIDENTIAL</Marker>
+        <OnMatch>DENY</OnMatch>
+    </turboFilter>
 
     <root level="info">
         <appender-ref ref="STDOUT" />
