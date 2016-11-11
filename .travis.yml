@@ -14,6 +14,9 @@ before_install:
 addons:
   sauce_connect: true
 
+after_failure:
+  - read_results.sh
+
 env:
   global:
     - SAUCE_USERNAME=graylog
