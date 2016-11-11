@@ -83,12 +83,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=.label.label-success:contains(&quot;RUNNING&quot;)</td>
+	<td>css=.label.label-success:contains('RUNNING')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
-	<td>css=.label.label-success:contains(&quot;RUNNING&quot;)</td>
+	<td>css=.label.label-success:contains('RUNNING')</td>
 	<td></td>
 </tr>
 </tbody></table>
