@@ -91,7 +91,9 @@
                                         <argument>5000</argument>
                                         <argument>--set-speed</argument>
                                         <argument>0</argument>
-                                        <argument>selenium/*/*_Testsuite.html</argument>
+                                        <argument>selenium/dashboards/Dashboards_Testsuite.html</argument>
+                                        <argument>selenium/inputs/Inputs_Testsuite.html</argument>
+                                        <argument>selenium/streams/Streams_Testsuite.html</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
