@@ -88,7 +88,7 @@
                                         <argument>--baseurl</argument>
                                         <argument>${baseUrl}</argument>
                                         <argument>--timeout</argument>
-                                        <argument>10000</argument>
+                                        <argument>5000</argument>
                                         <argument>--set-speed</argument>
                                         <argument>0</argument>
                                         <argument>selenium/dashboards/Dashboards_Testsuite.html</argument>
