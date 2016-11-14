@@ -17,6 +17,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=system-menu-dropdown</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>id=system-menu-dropdown</td>
 	<td></td>
@@ -28,7 +33,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>//button[.='Stop input']</td>
 	<td></td>
 </tr>
 <tr>
@@ -38,7 +43,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>//button[.='Start input']</td>
 	<td></td>
 </tr>
 <tr>
