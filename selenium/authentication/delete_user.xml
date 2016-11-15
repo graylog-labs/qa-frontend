@@ -37,6 +37,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=delete-user-${userName}</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>id=delete-user-${userName}</td>
 	<td></td>
