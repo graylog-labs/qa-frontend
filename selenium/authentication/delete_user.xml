@@ -46,6 +46,11 @@
 	<td>id=delete-user-${userName}</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForConfirmation</td>
+	<td>Do you really want to delete user ${userName}?</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
