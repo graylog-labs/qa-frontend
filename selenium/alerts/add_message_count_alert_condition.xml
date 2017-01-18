@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://172.16.20.12:9000/" />
+<title>add_message_count_alert_condition</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">add_message_count_alert_condition</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Alerts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Alerts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Manage conditions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Manage conditions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Add new condition</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add new condition</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.Select-placeholder</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.Select-placeholder</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.Select-input input</td>
+	<td>All messages${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=select.form-control</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=select.form-control</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=select.form-control</td>
+	<td>Message Count Alert Condition${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//button[.='Add alert condition']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[.='Add alert condition']</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
