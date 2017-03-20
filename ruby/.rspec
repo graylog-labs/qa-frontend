@@ -2,4 +2,3 @@
 --require ./local_env
 --require spec_helper
 --require capybara_helper
-

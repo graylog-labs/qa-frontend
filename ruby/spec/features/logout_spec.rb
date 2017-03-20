@@ -1,7 +1,8 @@
 include RSpec::Expectations
 
 describe "Logout", :type => :feature do
-  # TODO: add before task which logs in admin user, so we do not rely on the last test doing this
+  include_examples "authenticated"
+  
   it "should logout the user" do
     visit "/"
     expect(find(:xpath, "//a[@id='user-menu-dropdown']/descendant::span[.='Administrator']"))

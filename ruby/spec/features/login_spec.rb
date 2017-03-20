@@ -1,7 +1,8 @@
 include RSpec::Expectations
 
 describe "Login", :type => :feature do
-
+  include_examples "start_with_clean_session"
+  
   it "should reject invalid logins" do
     visit "/"
     within('div#login-box') {

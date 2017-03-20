@@ -52,3 +52,18 @@ module GenericHelpers
     ('a'..'z').to_a.shuffle[0,8].join
   end
 end
+
+RSpec.shared_examples "authenticated" do
+  before(:all) do
+    @session = register_session(admin_credentials[:user], admin_credentials[:password])
+    visit '/'
+    login_with_valid_session(admin_credentials[:user], @session["session_id"])
+  end
+end
+
+RSpec.shared_examples "start_with_clean_session" do
+  before(:all) do
+    visit '/'
+    clear_session
+  end
+end

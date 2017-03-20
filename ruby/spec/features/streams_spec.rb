@@ -3,12 +3,10 @@ include SessionHelpers
 include GenericHelpers
 
 describe "Creating a stream", :type => :feature do
+  include_examples "authenticated"
 
   before(:all) do
     @streamName = randomName
-    @session = register_session(admin_credentials[:user], admin_credentials[:password])
-    visit '/'
-    login_with_valid_session(admin_credentials[:user], @session["session_id"])
   end
 
   def streamItemSelector(streamName)

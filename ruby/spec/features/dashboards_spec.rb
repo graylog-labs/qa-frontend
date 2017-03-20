@@ -3,11 +3,10 @@ include SessionHelpers
 include GenericHelpers
 
 describe "Dashboards", :type => :feature do
+  include_examples "authenticated"
+  
   before(:all) do
     @dashboardName = randomName
-    @session = register_session(admin_credentials[:user], admin_credentials[:password])
-    visit '/'
-    login_with_valid_session(admin_credentials[:user], @session["session_id"])
   end
 
   it "should create new dashboard" do
@@ -35,6 +34,5 @@ describe "Dashboards", :type => :feature do
     end
 
     expect(page).not_to have_link(@dashboardName)
-    clear_session
   end
 end
