@@ -1,5 +1,4 @@
 require "json"
-require "selenium-webdriver"
 require "rspec"
 require 'capybara/rspec'
 require "rest-client"
@@ -17,18 +16,16 @@ def admin_credentials
   { user: ENV['ADMIN_USER'] || 'admin', password: ENV['ADMIN_PASSWORD'] || 'admin' }
 end
 
+def driver_profile
+  ENV['DRIVER_PROFILE'] || "chrome"
+end
+
 Capybara.configure do |config|
   config.run_server = false
-  config.default_driver = :selenium
   config.app_host = app_host
 end
 
-Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(
-    app,
-    browser: :chrome
-  )
-end
+require "./config/#{driver_profile}_config"
 
 module SessionHelpers
   def register_session(username, password, host = "capybara")
@@ -43,5 +40,15 @@ module SessionHelpers
     page.evaluate_script(setUsername)
     page.evaluate_script(setSession)
   end
+
+  def clear_session
+    page.evaluate_script(%Q[localStorage.setItem('sessionId', '')])
+    page.evaluate_script(%Q[localStorage.setItem('username', '')])
+  end
 end
-  
+
+module GenericHelpers
+  def randomName
+    ('a'..'z').to_a.shuffle[0,8].join
+  end
+end

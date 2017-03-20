@@ -1,11 +1,11 @@
 include RSpec::Expectations
-require 'pp'
 include SessionHelpers
+include GenericHelpers
 
 describe "Creating a stream", :type => :feature do
 
   before(:all) do
-    @streamName = randomStreamName
+    @streamName = randomName
     @session = register_session(admin_credentials[:user], admin_credentials[:password])
     visit '/'
     login_with_valid_session(admin_credentials[:user], @session["session_id"])
@@ -13,10 +13,6 @@ describe "Creating a stream", :type => :feature do
 
   def streamItemSelector(streamName)
     "//li[@class=\"stream\" and descendant::node()[text()=\"" + streamName + "\"]]"
-  end
-
-  def randomStreamName
-    ('a'..'z').to_a.shuffle[0,8].join
   end
 
   it "should create stream" do
