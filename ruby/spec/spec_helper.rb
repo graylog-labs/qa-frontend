@@ -102,4 +102,4 @@ RSpec.configure do |config|
 =end
 end
 
-Dir[File.expand_path("spec/helpers/**/*_helper.rb")].each {|helper| require helper}
+Dir[File.expand_path("spec/helpers/**/*_helpers.rb")].each {|helper| require helper}

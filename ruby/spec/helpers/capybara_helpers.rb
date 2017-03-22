@@ -3,6 +3,8 @@ require "rspec"
 require 'capybara/rspec'
 require "rest-client"
 require "json"
+require "session_helpers"
+include SessionHelpers
 
 def app_host
   ENV['APP_HOST'] || 'http://localhost:8080'
