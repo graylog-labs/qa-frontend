@@ -101,3 +101,5 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+Dir[File.expand_path("spec/helpers/**/*_helper.rb")].each {|helper| require helper}
