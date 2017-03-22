@@ -45,6 +45,17 @@ describe "Creating a stream", :type => :feature do
     expect(find_stream(@streamName)).to have_no_content("Stopped", wait: 30)
   end
 
+  it "should pause the stream" do
+    visit "/streams"
+    within(find_stream(@streamName, wait: 30)) do
+      accept_alert("Do you really want to pause stream '#{@streamName}'?") do
+        click_on "Pause Stream"
+      end
+    end
+
+    expect(find_stream(@streamName)).to have_content("Stopped", wait: 30)
+  end
+
   it "should delete the stream" do
     visit "/streams"
     within(find_stream(@streamName, wait: 30)) do
