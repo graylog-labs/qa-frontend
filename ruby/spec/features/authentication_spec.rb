@@ -28,5 +28,17 @@ describe "Creating a user", :type => :feature do
     click_button("Create User")
     expect(page).to have_link(@adminName)
   end
+  it "should delete admin user" do
+    visit '/'
+    find_link("System").click
+    find_link("Authentication").click
+    accept_alert "Do you really want to delete user #{@adminName}?" do
+      within(:id,"user-list") do
+        find(:id, "delete-user-#{@adminName}" ).click
+      end
+    end
 
+    expect(page).not_to have_link(@adminName)
+
+  end
 end
