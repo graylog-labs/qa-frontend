@@ -1,13 +1,15 @@
 include RSpec::Expectations
+include GraylogHelpers
 
 describe "Logout", :type => :feature do
   include_examples "authenticated"
-  
+
   it "should logout the user" do
     visit "/"
-    expect(find(:xpath, "//a[@id='user-menu-dropdown']/descendant::span[.='Administrator']"))
-    find(:xpath, "//a[@id='user-menu-dropdown']/descendant::span[.='Administrator']").click
-    find(:link, "Log out").click
-    expect(page).to have_selector(:xpath, "//input[@placeholder='Username']")
+    within(navigation_bar) do
+      click_on("Administrator")
+      click_on("Log out")
+    end
+    expect(page).to have_field("Username")
   end
 end

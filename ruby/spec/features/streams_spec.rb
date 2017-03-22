@@ -11,7 +11,7 @@ describe "Creating a stream", :type => :feature do
 
   it "should create stream" do
     visit '/'
-    find_link("Streams").click
+    click_link("Streams")
     click_button("Create Stream")
 
     fill_in("Title", with: @streamName)
