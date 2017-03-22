@@ -53,16 +53,16 @@ module GenericHelpers
   end
 end
 
-RSpec.shared_examples "authenticated" do
-  before(:all) do
+RSpec.shared_examples "authenticated" do |scope = :all|
+  before(scope) do
     @session = register_session(admin_credentials[:user], admin_credentials[:password])
     visit '/'
     login_with_valid_session(admin_credentials[:user], @session["session_id"])
   end
 end
 
-RSpec.shared_examples "start_with_clean_session" do
-  before(:all) do
+RSpec.shared_examples "start_with_clean_session" do |scope = :all|
+  before(scope) do
     visit '/'
     clear_session
   end

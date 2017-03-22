@@ -4,22 +4,22 @@ include GenericHelpers
 
 describe "Dashboards", :type => :feature do
   include_examples "authenticated"
-  
+
   before(:all) do
     @dashboardName = randomName
   end
 
   it "should create new dashboard" do
     visit "/"
-    find_link("Dashboards").click
+    click_on("Dashboards")
 
     expect(page).not_to have_link(@dashboardName)
 
     click_button("Create dashboard")
 
-    find(:xpath, "//input[@label='Title:']").set @dashboardName
-    find(:xpath, "//input[@label='Description:']").set "Testing"
-    find(:xpath, "//button[.=\"Save\"]").click
+    fill_in("Title", with: @dashboardName)
+    fill_in("Description", with: "Testing")
+    click_button("Save")
 
     expect(page).to have_link(@dashboardName)
   end
@@ -27,12 +27,18 @@ describe "Dashboards", :type => :feature do
   it "should delete new dashboard" do
     visit "/dashboards"
 
-    find(:xpath, "//li[@class=\"stream\" and descendant::node()[text()=\"" + @dashboardName + "\"]]/descendant::node()[text()=\"More actions\"]").click
+    within(find_dashboard(@dashboardName)) do
+      click_on "More actions"
 
-    accept_alert "Do you really want to delete the dashboard #{@dashboardName}" do
-      find(:xpath, "//li[@class=\"stream\" and descendant::node()[text()=\"" + @dashboardName + "\"]]/descendant::node()[text()=\"Delete this dashboard\"]").click
+      accept_alert "Do you really want to delete the dashboard #{@dashboardName}" do
+        click_on("Delete this dashboard")
+      end
     end
 
     expect(page).not_to have_link(@dashboardName)
+  end
+
+  def find_dashboard(dashboardName)
+    find(:xpath, "//li[@class=\"stream\" and descendant::node()[text()=\"" + dashboardName + "\"]]")
   end
 end
