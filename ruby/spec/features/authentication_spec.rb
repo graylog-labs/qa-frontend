@@ -7,7 +7,6 @@ describe "Creating a user", :type => :feature do
   before(:all) do
     @adminName = randomName
     @userName = randomName
-    @editName = randomName
     @session = register_session(admin_credentials[:user], admin_credentials[:password])
     visit '/'
     login_with_valid_session(admin_credentials[:user], @session["session_id"])
@@ -75,6 +74,18 @@ describe "Creating a user", :type => :feature do
 
   end
 
+    it "should edit userrole" do
+      visit '/'
+      find_link("System").click
+      find_link("Authentication").click
+      within(:id, "user-list") do
+        find(:id, "edit-user-#{@userName}").click
+      end
+      within(:xpath, '//div[@class="form-group" and descendant::node()[text()="Roles"]]') do
+        find(:css, "div.Select-control input").set "Reader"
+      end
+    end
+
   it "should delete readonly user" do
     visit '/'
     find_link("System").click
@@ -84,13 +95,5 @@ describe "Creating a user", :type => :feature do
         find(:id, "delete-user-#{@userName}" ).click
       end
     end
-  end
-
-
-
-  it "should edit userrole" do
-    visit '/'
-    find_link("System").click
-    find_link("Authentication").click
   end
 end
