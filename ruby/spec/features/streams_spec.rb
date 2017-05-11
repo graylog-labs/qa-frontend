@@ -12,7 +12,7 @@ describe "Creating a stream", :type => :feature do
   it "should create stream" do
     visit '/'
     click_link("Streams")
-    expect(current_path).to be("/streams")
+    expect(current_path).to eq("/streams")
     click_button("Create Stream")
 
     fill_in("Title", with: @streamName)
