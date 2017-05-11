@@ -12,6 +12,7 @@ describe "Creating a stream", :type => :feature do
   it "should create stream" do
     visit '/'
     click_link("Streams")
+    expect(current_path).to be("/streams")
     click_button("Create Stream")
 
     fill_in("Title", with: @streamName)
@@ -25,15 +26,17 @@ describe "Creating a stream", :type => :feature do
   it "should add stream rule" do
     visit "/streams"
     within(find_stream(@streamName, wait: 30)) do
-      click_link("Manage Rules")
+      click_on("Manage Rules")
+    end
+    click_on("Add stream rule")
+
+    within(find(:id, "StreamRuleForm")) do
+      fill_in("Field", with: "message", class: "tt-input")
+      fill_in("Value", with: "foo")
+      click_on("Save")
     end
 
-    click_link_or_button("Add stream rule")
-    find(:xpath, "//input[@label='Field' and contains(@class, 'tt-input')]").set "message"
-    fill_in("Value", with: "foo")
-    click_link_or_button("Save")
-
-    expect(page).to have_selector(:xpath, "//ul[@class=\"streamrules-list\"]/li[descendant::node()[text()=\"foo\"]]")
+    expect(find("ul", class: "streamrules-list")).to have_text("Field message must match exactly foo")
   end
 
   it "should start the stream" do
