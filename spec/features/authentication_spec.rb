@@ -71,20 +71,19 @@ describe "Creating a user", :type => :feature do
     find(:id, "full_name").set @userName
     click_button("Update User")
     expect(page).to have_link(@userName)
-
   end
 
-    it "should edit userrole" do
-      visit '/'
-      find_link("System").click
-      find_link("Authentication").click
-      within(:id, "user-list") do
-        find(:id, "edit-user-#{@userName}").click
-      end
-      within(:xpath, '//div[@class="form-group" and descendant::node()[text()="Roles"]]') do
-        find(:css, "div.Select-control input").set "Reader"
-      end
+  it "should edit userrole" do
+    visit '/'
+    find_link("System").click
+    find_link("Authentication").click
+    within(:id, "user-list") do
+      find(:id, "edit-user-#{@userName}").click
     end
+    within(:xpath, '//div[@class="form-group" and descendant::node()[text()="Roles"]]') do
+      find(:css, "div.Select-control input").set "Reader"
+    end
+  end
 
   it "should delete readonly user" do
     visit '/'
@@ -95,5 +94,6 @@ describe "Creating a user", :type => :feature do
         find(:id, "delete-user-#{@userName}" ).click
       end
     end
+    expect(page).not_to have_link(@userName)
   end
 end
