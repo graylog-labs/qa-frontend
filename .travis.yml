@@ -1,31 +1,24 @@
 sudo: required
 
-language: java
-
-jdk:
-- oraclejdk8
+language: ruby
 
 services:
   - docker
 
 before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y libxml2-utils
-  - docker/bootstrap-server.sh
+  - curl -L https://github.com/docker/compose/releases/download/1.4.0/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
 
 addons:
   sauce_connect: true
 
-after_success:
-  - ./read_results.sh
-
-after_failure:
-  - ./read_results.sh
+script:
+  - cd docker && docker-compose up
 
 env:
   global:
     - SAUCE_USERNAME=graylog
-    - BASEURL=http://localhost:9000
     - secure: "rFLHPhV1x6INyti5oeEfKLaNIqCRJdQHup+vUSHht8euRcE5GgjL4qiplbdLsBGWCjadWPUn+8aGJlZahhNZz0wHkt22FqGKGF9H4CjaHDTBLpla3cvBRop5m+HG+lwah1xeb9qJo21N3+vUAcuzPJ6VF3KuC04QQ5JeNSf+ViBWkjTQxXOq8iuVR+EVhcjJ1bAz7jcCfCL1Zb+MxJ6InGomx3E61oUTu2PYmXM2tOiQYC1FyvMe5xCK3qcEOstxdzQzq3MpW8YFe0k9lMIaaQBgKWRF3ABWDmTQx8xVroysnxIHB4ApkUGEZ7irSNOp3wI+q/mOi9torJhJ74TaY2XRzSC9NhpCnPrv0FRyJ22sWrzir6nOIl5EjYhQfFGuv5T2A8W+81Wu+m+9v4a1fSnZM44Qfbm4EekjLnVmJjFf7zPdE2YlFn+rlkxl8Zyfkievu+KIhVQFfGhSl2jh68OgxWgg/qXUgOavihRjpVvo1x0LLA045C3i4Q5BojN2j0KOkwFkV5grZrHCcPqQo3vTnZ4uBB3TLazac1dA94RwNK7Q99QvcgydYNhhA+hViVCmDg8A+bASVGGWDTDkN9Fq4ZmTaIsTF3/xYsD5LylNvpcsN79QQWoPpbGEGKgyWRv4DSpWG/HSeUYCRt5veUyvgapRzfB6a+AD+YxCOhQ="
   matrix:
     - PLATFORM="Windows 10" BROWSER="internet explorer" VERSION="11.103"
