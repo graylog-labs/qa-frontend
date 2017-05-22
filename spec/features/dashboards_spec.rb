@@ -8,11 +8,10 @@ describe "Dashboards", :type => :feature do
   before(:all) do
     @dashboardName = randomName
     @newdashboardName = randomName
+    visit "/dashboards"
   end
 
   it "should create new dashboard" do
-    visit "/"
-    click_on("Dashboards")
     expect(page).not_to have_link(@dashboardName)
     click_button("Create dashboard")
     fill_in("Title", with: @dashboardName)
@@ -22,18 +21,18 @@ describe "Dashboards", :type => :feature do
   end
 
   it "should edit dashboard" do
-    visit "/Dashboards"
-    click_on("Edit dashboard").set @dashboardName
+    within(find_dashboard(@dashboardName)) do
+      click_on("Edit dashboard")
+    end
     fill_in("Title", with: @newdashboardName)
     fill_in("Description", with: "Edited")
     click_on("Save")
-    expect(page).to have_link(@newdashboardName)
 
+    expect(page).to have_link(@newdashboardName)
+    expect(find_dashboard(@newdashboardName)).to have_text("Edited")
   end
 
   it "should delete new dashboard" do
-    visit "/dashboards"
-
     within(find_dashboard(@newdashboardName)) do
       click_on "More actions"
 
