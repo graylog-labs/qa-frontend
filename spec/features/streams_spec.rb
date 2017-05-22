@@ -73,7 +73,7 @@ describe "Creating a stream", :type => :feature do
   end
 
   def find_stream(streamName, options = {})
-    find(:xpath, "//li[@class=\"stream\" and descendant::node()[text()=\"" + streamName + "\"]]", options)
+    find("li", class: "stream", text: streamName)
   end
 
   def modal_dialog
