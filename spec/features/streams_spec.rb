@@ -38,7 +38,9 @@ describe "Creating a stream", :type => :feature do
       click_on("Save")
     end
 
-    expect(streamrules_list).to have_text("Field message must match exactly foo")
+    within(find_stream(@streamName)) do
+      expect(streamrules_list).to have_text("Field message must match exactly foo")
+    end
   end
 
   it "should start the stream" do
