@@ -16,8 +16,6 @@ RUN adduser --disabled-password --disabled-login --gecos '' --uid 1100 --gid 110
 
 RUN gem install --no-ri --no-rdoc bundler
 
-COPY docker-entrypoint.sh /
-
 USER rspec
 WORKDIR /home/rspec
 
@@ -25,4 +23,10 @@ ENV BUNDLE_PATH=/home/rspec/.gem
 ENV GEM_PATH=/home/rspec/.gem
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/rspec/.gem/bin
 
-CMD ["/docker-entrypoint.sh"]
+RUN git clone https://github.com/graylog-labs/qa-frontend.git
+WORKDIR /home/rspec/qa-frontend
+RUN git checkout rspec
+RUN bundle install
+RUN touch local_env.rb
+
+CMD ["rspec"]
