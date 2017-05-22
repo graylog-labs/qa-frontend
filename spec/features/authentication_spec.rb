@@ -2,53 +2,43 @@ include RSpec::Expectations
 include GenericHelpers
 include SessionHelpers
 
-describe "Creating a user", :type => :feature do
+Capybara.default_max_wait_time = 10
+
+describe "User page", :type => :feature do
+  include_examples "authenticated"
 
   before(:all) do
     @adminName = randomName
     @userName = randomName
-    @session = register_session(admin_credentials[:user], admin_credentials[:password])
-    visit '/'
-    login_with_valid_session(admin_credentials[:user], @session["session_id"])
+  end
+
+  before(:each) do
+    visit "/system/authentication"
   end
 
   it "should create admin user" do
-    visit '/'
-    find_link("System").click
-    find_link("Authentication").click
     click_link_or_button("Add new user")
 
-    find(:id, "username").set @adminName
-    find(:id, "fullname").set "John Doe"
-    find(:id, "email").set "test@example.org"
-    find(:id, "password").set "123456"
+    fill_in "Username", with: @adminName
+    fill_in "Full Name", with: "John Doe"
+    fill_in "Email Address", with: "test@example.org"
+    fill_in "Password", with: "123456"
     find(:id, "password-repeat").set "123456"
-    within(:xpath, '//div[@class="form-group" and descendant::node()[text()="Roles"]]') do
-      find(:css, "div.Select-control input").set "Admin"
-    end
+
+    clear_typeahead "Roles"
+    fill_typeahead "Roles", with: "Admin"
+
     click_button("Create User")
+
     expect(page).to have_link(@adminName)
-  end
-  
-  it "should edit userrole" do
-    visit '/'
-    find_link("System").click
-    find_link("Authentication").click
-    within(:id, "user-list") do
-      find(:id, "edit-user-#{@adminName}").click
-    end
-    within(:xpath, '//div[@class="form-group" and descendant::node()[text()="Roles"]]') do
-      find(:css, "div.Select-control input").set "Reader"
-    end
+    expect(user_row(@adminName)).to have_text("Admin")
+    expect(user_row(@adminName)).not_to have_text("Reader")
   end
 
   it "should delete admin user" do
-    visit '/'
-    find_link("System").click
-    find_link("Authentication").click
     accept_alert "Do you really want to delete user #{@adminName}?" do
-      within(:id,"user-list") do
-        find(:id, "delete-user-#{@adminName}" ).click
+      within(user_row(@adminName)) do
+        click_on "Delete"
       end
     end
 
@@ -56,44 +46,62 @@ describe "Creating a user", :type => :feature do
   end
 
   it "should create readonly user" do
-    visit '/'
-    find_link("System").click
-    find_link("Authentication").click
     click_link_or_button("Add new user")
 
-    find(:id, "username").set @userName
-    find(:id, "fullname").set "John Reader"
-    find(:id, "email").set "test@example.org"
-    find(:id, "password").set "123456"
+    fill_in "Username", with: @userName
+    fill_in "Full Name", with: "John Reader"
+    fill_in "Email Address", with: "test@example.org"
+    fill_in "Password", with: "123456"
     find(:id, "password-repeat").set "123456"
-    within(:xpath, '//div[@class="form-group" and descendant::node()[text()="Roles"]]') do
-      find(:css, "div.Select-control input").set "Reader"
-    end
+
+    clear_typeahead "Roles"
+    fill_typeahead "Roles", with: "Reader"
     click_button("Create User")
-    expect(page).to have_link(@userName)
+
+    expect(page).to have_text(@userName)
+    expect(user_row(@userName)).to have_text("Reader")
+    expect(user_row(@userName)).not_to have_text("Admin")
   end
 
   it "should edit username" do
-    visit '/'
-    find_link("System").click
-    find_link("Authentication").click
-    within(:id, "user-list") do
-      find(:id, "edit-user-#{@userName}").click
+    within(user_row(@userName)) do
+      click_on "Edit"
     end
-    find(:id, "full_name").set @userName
+
+    fill_in "Full Name", with: "The new full name"
     click_button("Update User")
-    expect(page).to have_link(@userName)
+
+    expect(page).to have_text("The new full name")
+    expect(page).not_to have_text("John Reader")
+    expect(user_row(@userName)).to have_text("The new full name")
+    expect(user_row(@userName)).not_to have_text("John Reader")
+  end
+
+  it "should edit userrole" do
+    within(user_row(@userName)) do
+      click_on "Edit"
+    end
+
+    clear_typeahead "Roles"
+    fill_typeahead "Roles", with: "Reader"
+
+    accept_alert "Really update roles for \"#{@userName}\"?" do
+      click_on "Update role"
+    end
+
+    expect(user_row(@username)).to have_text "Reader"
   end
 
   it "should delete readonly user" do
-    visit '/'
-    find_link("System").click
-    find_link("Authentication").click
     accept_alert "Do you really want to delete user #{@userName}?" do
-      within(:id, "user-list") do
-        find(:id, "delete-user-#{@userName}" ).click
+      within(user_row(@userName)) do
+        click_on "Delete"
       end
     end
     expect(page).not_to have_link(@userName)
+  end
+
+  def user_row(username)
+    find("tr", text: username)
   end
 end
