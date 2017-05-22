@@ -9,10 +9,11 @@ describe "Creating a stream", :type => :feature do
     @streamName = randomName
   end
 
+  before(:each) do
+    visit "/streams"
+  end
+
   it "should create stream" do
-    visit '/'
-    click_link("Streams")
-    expect(current_path).to eq("/streams")
     click_button("Create Stream")
 
     within(modal_dialog) do
@@ -26,7 +27,6 @@ describe "Creating a stream", :type => :feature do
   end
 
   it "should add stream rule" do
-    visit "/streams"
     within(find_stream(@streamName)) do
       click_on("Manage Rules")
     end
@@ -42,7 +42,6 @@ describe "Creating a stream", :type => :feature do
   end
 
   it "should start the stream" do
-    visit "/streams"
     within(find_stream(@streamName)) do
       click_on "Start Stream"
     end
@@ -51,7 +50,6 @@ describe "Creating a stream", :type => :feature do
   end
 
   it "should pause the stream" do
-    visit "/streams"
     within(find_stream(@streamName)) do
       accept_alert("Do you really want to pause stream '#{@streamName}'?") do
         click_on "Pause Stream"
@@ -62,7 +60,6 @@ describe "Creating a stream", :type => :feature do
   end
 
   it "should delete the stream" do
-    visit "/streams"
     within(find_stream(@streamName)) do
       click_button("More Actions")
       accept_alert "Do you really want to remove this stream" do
