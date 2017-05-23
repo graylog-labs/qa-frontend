@@ -17,6 +17,13 @@ describe "Alerts", :type => :feature do
     click_on "Manage conditions"
     click_on "Add new condition"
     fill_typeahead "Alert on stream", with: "All messages"
+
+    expect(page).to have_select("Condition type", with_options: [
+      "Field Content Alert Condition",
+      "Field Aggregation Alert Condition",
+      "Message Count Alert Condition"
+    ])
+    expect(type_condition_select).to have_selector(:option, disabled: true, text: "Select a condition type")
     select "Field Content Alert Condition", from: "Condition type"
 
     click_on "Add alert condition"
@@ -70,5 +77,9 @@ describe "Alerts", :type => :feature do
 
   def alert_condition_entry(alertConditionName)
     alert_conditions_list.find("li", text: alertConditionName)
+  end
+
+  def type_condition_select
+    find(:select, "Condition type")
   end
 end
