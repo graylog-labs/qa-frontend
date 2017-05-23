@@ -13,10 +13,12 @@ describe "Dashboards", :type => :feature do
 
   it "should create new dashboard" do
     expect(page).not_to have_link(@dashboardName)
+
     click_button("Create dashboard")
     fill_in("Title", with: @dashboardName)
     fill_in("Description", with: "Testing")
     click_button("Save")
+
     expect(page).to have_link(@dashboardName)
   end
 
