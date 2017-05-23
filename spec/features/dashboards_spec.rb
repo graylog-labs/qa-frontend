@@ -2,16 +2,19 @@ include RSpec::Expectations
 include SessionHelpers
 include GenericHelpers
 
-describe "Dashboards", :type => :feature do
+describe "Dashboard functionality", :type => :feature do
   include_examples "authenticated"
 
   before(:all) do
     @dashboardName = randomName
     @newdashboardName = randomName
+  end
+
+  before(:each) do
     visit "/dashboards"
   end
 
-  it "should create new dashboard" do
+  it "creates new dashboard" do
     expect(page).not_to have_link(@dashboardName)
 
     click_button("Create dashboard")
@@ -22,7 +25,7 @@ describe "Dashboards", :type => :feature do
     expect(page).to have_link(@dashboardName)
   end
 
-  it "should edit dashboard" do
+  it "changes title of existing dashboard" do
     within(find_dashboard(@dashboardName)) do
       click_on("Edit dashboard")
     end
@@ -34,7 +37,7 @@ describe "Dashboards", :type => :feature do
     expect(find_dashboard(@newdashboardName)).to have_text("Edited")
   end
 
-  it "should delete new dashboard" do
+  it "deletes existing dashboard" do
     within(find_dashboard(@newdashboardName)) do
       click_on "More actions"
 
@@ -47,6 +50,6 @@ describe "Dashboards", :type => :feature do
   end
 
   def find_dashboard(dashboardName)
-    find(:xpath, "//li[@class=\"stream\" and descendant::node()[text()=\"" + dashboardName + "\"]]")
+    find("li", class: "stream", text: dashboardName)
   end
 end
