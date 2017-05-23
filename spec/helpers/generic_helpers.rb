@@ -1,3 +1,13 @@
+module Capybara
+  module Node
+    class Element
+      def has_placeholder?(text)
+        has_selector?(:option, disabled: true, text: text)
+      end
+    end
+  end
+end
+
 module GenericHelpers
   def randomName
     ('a'..'z').to_a.shuffle[0,8].join

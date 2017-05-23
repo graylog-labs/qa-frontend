@@ -2,7 +2,7 @@ include RSpec::Expectations
 include SessionHelpers
 include GenericHelpers
 
-describe "Alerts", :type => :feature do
+describe "Alert Conditions", :type => :feature do
   include_examples "authenticated"
 
   before(:all) do
@@ -11,10 +11,10 @@ describe "Alerts", :type => :feature do
 
   before(:each) do
     visit "/alerts"
+    click_on "Manage conditions"
   end
 
   it "create a new field alert condition" do
-    click_on "Manage conditions"
     click_on "Add new condition"
     fill_typeahead "Alert on stream", with: "All messages"
 
@@ -23,7 +23,7 @@ describe "Alerts", :type => :feature do
       "Field Aggregation Alert Condition",
       "Message Count Alert Condition"
     ])
-    expect(type_condition_select).to have_selector(:option, disabled: true, text: "Select a condition type")
+    expect(type_condition_select).to have_placeholder("Select a condition type")
     select "Field Content Alert Condition", from: "Condition type"
 
     click_on "Add alert condition"
@@ -39,8 +39,6 @@ describe "Alerts", :type => :feature do
   end
 
   it "edit an existing field condition and change field" do
-    click_on "Manage conditions"
-
     within(alert_condition_entry(@alertConditionName)) do
       click_on @alertConditionName
     end
@@ -58,8 +56,6 @@ describe "Alerts", :type => :feature do
   end
 
   it "delete an existing alert condition" do
-    click_on "Manage conditions"
-
     within(alert_condition_entry(@alertConditionName)) do
       click_on "Actions"
 
