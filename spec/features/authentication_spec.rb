@@ -89,7 +89,7 @@ describe "User page", :type => :feature do
       click_on "Update role"
     end
 
-    expect(user_row(@username)).to have_text "Reader"
+    expect(user_row(@userName)).to have_text "Reader"
   end
 
   it "should delete readonly user" do
