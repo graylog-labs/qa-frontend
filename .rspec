@@ -1,0 +1,4 @@
+--color
+-I spec/helpers
+--require ./local_env
+--require spec_helper
