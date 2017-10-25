@@ -16,7 +16,7 @@ describe "User page", :type => :feature do
     visit "/system/authentication"
   end
 
-  it "should create admin user" do
+  it "creates admin user" do
     click_link_or_button("Add new user")
 
     fill_in "Username", with: @adminName
@@ -35,7 +35,7 @@ describe "User page", :type => :feature do
     expect(user_row(@adminName)).not_to have_text("Reader")
   end
 
-  it "should delete admin user" do
+  it "deletes admin user" do
     accept_alert "Do you really want to delete user #{@adminName}?" do
       within(user_row(@adminName)) do
         click_on "Delete"
@@ -45,7 +45,7 @@ describe "User page", :type => :feature do
     expect(page).not_to have_link(@adminName)
   end
 
-  it "should create readonly user" do
+  it "creates readonly user" do
     click_link_or_button("Add new user")
 
     fill_in "Username", with: @userName
@@ -63,7 +63,7 @@ describe "User page", :type => :feature do
     expect(user_row(@userName)).not_to have_text("Admin")
   end
 
-  it "should edit username" do
+  it "edits username" do
     within(user_row(@userName)) do
       click_on "Edit"
     end
@@ -77,7 +77,7 @@ describe "User page", :type => :feature do
     expect(user_row(@userName)).not_to have_text("John Reader")
   end
 
-  it "should edit userrole" do
+  it "edits userrole" do
     within(user_row(@userName)) do
       click_on "Edit"
     end
@@ -92,7 +92,7 @@ describe "User page", :type => :feature do
     expect(user_row(@userName)).to have_text "Reader"
   end
 
-  it "should delete readonly user" do
+  it "deletes readonly user" do
     accept_alert "Do you really want to delete user #{@userName}?" do
       within(user_row(@userName)) do
         click_on "Delete"
